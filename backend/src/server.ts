@@ -5,7 +5,6 @@ import connectDB from "./config/db"
 import authRoutes from "./routes/authRoute"
 import { appConfig } from "./config"
 
-dotenv.config()
 connectDB()
 
 const app = express()
