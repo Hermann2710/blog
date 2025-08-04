@@ -6,6 +6,7 @@ import { appConfig } from "./config"
 import categoryRoutes from "./routes/categoryRoute"
 import articleRoutes from "./routes/articleRoute"
 import path from "path"
+import userRoutes from "./routes/userRoutes"
 
 connectDB()
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")))
 
 app.use("/api/auth", authRoutes)
+app.use("/api/user", userRoutes)
 app.use("/api/categories", categoryRoutes)
 app.use("/api/articles", articleRoutes)
 
