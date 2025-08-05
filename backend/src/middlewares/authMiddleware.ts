@@ -24,7 +24,7 @@ export const protect = async (
 
   try {
     const decoded = jwt.verify(token, appConfig.secretKey) as { id: string }
-    req.user = (await User.findById(decoded.id).select(".password")) as IUser
+    req.user = (await User.findById(decoded.id).select("-password")) as IUser
 
     if (!req.user) {
       return res.status(401).json({ message: "Utilisateur introuvable !" })

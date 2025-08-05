@@ -1,12 +1,5 @@
 import { createContext, useContext } from "react"
-
-export interface User {
-  _id: string
-  name: string
-  username: string
-  email: string
-  role: string
-}
+import type { User } from "../../types/user"
 
 export interface AuthContextType {
   user: User | null

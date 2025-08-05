@@ -50,7 +50,7 @@ export const registerUser = async (req: Request, res: Response) => {
 
     return res.status(201).json({
       user: u,
-      token: generateToken(u.id, u.role),
+      token: generateToken(user.id),
       message: "Inscription réussie !",
     })
   } catch (error) {
@@ -81,7 +81,7 @@ export const loginUser = async (req: Request, res: Response) => {
     const { password: _, ...u } = user.toObject()
     return res.json({
       user: u,
-      token: generateToken(u.id, u.role),
+      token: generateToken(user.id),
       message: "Connexion réussie !",
     })
   } catch (error) {

@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react"
-import { AuthContext, type User } from "./helpers/auth-context-helper"
+import { AuthContext } from "./helpers/auth-context-helper"
 import axiosClient from "../api/axiosClient"
+import type { User } from "../types/user"
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
