@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
-*:disabled {
-  cursor: not-allowed;
-}
+@layer utilities {
+  *:disabled {
+    @apply cursor-not-allowed;
+  }
 
-button {
-  cursor: pointer;
+  button {
+    @apply cursor-pointer;
+  }
 }
